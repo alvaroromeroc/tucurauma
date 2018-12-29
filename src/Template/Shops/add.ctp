@@ -27,7 +27,7 @@
             //echo $this->Form->control('alias');
             echo $this->Form->control('lat', ['label'=>'Latitud']);
             echo $this->Form->control('lng', ['label'=>'Longitud']);
-            echo $this->Form->control('adress', ['label'=>'Dirección']);
+            echo $this->Form->control('address', ['label'=>'Dirección']);
             echo $this->Form->control('description', ['label'=>'Descripción']);
             echo $this->Form->control('schedule', ['label'=>'Horario']);
             echo $this->Form->control('phone', ['label'=>'Teléfono']);
@@ -42,8 +42,8 @@
                 '0' => 'No Destacado',
                 '1' => 'Destacado',
             ]);
-            echo $this->Form->control('header', ['type' => 'file', 'label'=>'Imagen Header']);
-            echo $this->Form->control('logo', ['type' => 'file', 'label'=>'Imagen Logo']);
+            //echo $this->Form->control('header', ['type' => 'file', 'label'=>'Imagen Header']);
+            //echo $this->Form->control('logo', ['type' => 'file', 'label'=>'Imagen Logo']);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Aceptar')) ?>

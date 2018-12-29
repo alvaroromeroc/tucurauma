@@ -121,11 +121,11 @@ class ProductsTable extends Table
             ->allowEmpty('active');
 
         $validator
-            ->scalar('image')
-            ->maxLength('image', 255)
+        //    ->scalar('image')
+        //    ->maxLength('image', 255)
             ->allowEmpty('image');
 
-        $validator
+        /*$validator
             ->scalar('image_dir')
             ->maxLength('image_dir', 255)
             ->allowEmpty('image_dir');
@@ -137,7 +137,7 @@ class ProductsTable extends Table
         $validator
             ->scalar('image_type')
             ->maxLength('image_type', 45)
-            ->allowEmpty('image_type');
+            ->allowEmpty('image_type');*/
 
         return $validator;
     }

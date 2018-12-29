@@ -22,12 +22,12 @@
     <fieldset>
         <legend><?= __('Nuevo Producto') ?></legend>
         <?php
-            echo $this->Form->control('shops_id', ['options' => $shops]);
+            echo $this->Form->control('shops_id', ['options' => $shops, 'label'=>'Tienda']);
             echo $this->Form->control('product', ['label'=>'Nombre de Producto']);
             echo $this->Form->control('description', ['label'=>'Descripción']);
             echo $this->Form->control('price', ['label'=>'Precio']);
             echo $this->Form->control('active', ['label'=>'Activo']);
-            echo $this->Form->control('image', ['type' => 'file']);
+            echo $this->Form->control('image', ['type' => 'file', 'label'=>'Imagen']);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Aceptar')) ?>

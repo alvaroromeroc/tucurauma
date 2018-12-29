@@ -23,16 +23,13 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('shops_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('product') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('description') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('price') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('active') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('image') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('image_dir') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('image_size') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('image_type') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('shops_id', ['label'=>'Tienda']) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('product', ['label'=>'Producto']) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('price', ['label'=>'Precio']) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('active', ['label'=>'Activo']) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('image', ['label'=>'Imagen']) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('image_size', ['label'=>'Peso Imagen']) ?></th>
+                <th scope="col" class="actions"><?= __('Acciones') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -41,13 +38,10 @@
                 <td><?= $this->Number->format($product->id) ?></td>
                 <td><?= $product->has('shop') ? $this->Html->link($product->shop->name, ['controller' => 'Shops', 'action' => 'view', $product->shop->id]) : '' ?></td>
                 <td><?= h($product->product) ?></td>
-                <td><?= h($product->description) ?></td>
                 <td><?= $this->Number->format($product->price) ?></td>
                 <td><?= $this->Number->format($product->active) ?></td>
                 <td><?= h($product->image) ?></td>
-                <td><?= h($product->image_dir) ?></td>
                 <td><?= $this->Number->format($product->image_size) ?></td>
-                <td><?= h($product->image_type) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $product->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $product->id]) ?>

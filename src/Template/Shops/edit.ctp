@@ -27,7 +27,7 @@
             //echo $this->Form->control('alias');
             echo $this->Form->control('lat', ['label'=>'Latitud']);
             echo $this->Form->control('lng', ['label'=>'Longitud']);
-            echo $this->Form->control('adress', ['label'=>'Dirección']);
+            echo $this->Form->control('address', ['label'=>'Dirección']);
             echo $this->Form->control('description', ['label'=>'Descripción']);
             echo $this->Form->control('schedule', ['label'=>'Horario']);
             echo $this->Form->control('phone', ['label'=>'Teléfono']);

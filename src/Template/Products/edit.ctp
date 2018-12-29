@@ -18,19 +18,19 @@
     </ul>
 </nav>
 <div class="products form large-9 medium-8 columns content">
-    <?= $this->Form->create($product) ?>
+    <?= $this->Form->create($product, ['type' => 'file']) ?>
     <fieldset>
-        <legend><?= __('Edit Product') ?></legend>
+        <legend><?= __('Editar Producto') ?></legend>
         <?php
-            echo $this->Form->control('shops_id', ['options' => $shops]);
-            echo $this->Form->control('product');
-            echo $this->Form->control('description');
-            echo $this->Form->control('price');
-            echo $this->Form->control('active');
-            echo $this->Form->control('image');
-            echo $this->Form->control('image_dir');
+            echo $this->Form->control('shops_id', ['options' => $shops, 'label'=>'Tienda']);
+            echo $this->Form->control('product', ['label'=>'Nombre de Producto']);
+            echo $this->Form->control('description', ['label'=>'Descripción']);
+            echo $this->Form->control('price', ['label'=>'Precio']);
+            echo $this->Form->control('active', ['label'=>'Activo']);
+            echo $this->Form->control('image',['type' => 'file', 'label'=>'Imagen']);
+            /*echo $this->Form->control('image_dir');
             echo $this->Form->control('image_size');
-            echo $this->Form->control('image_type');
+            echo $this->Form->control('image_type');*/
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

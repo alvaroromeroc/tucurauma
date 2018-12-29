@@ -12,7 +12,7 @@ use Cake\ORM\Entity;
  * @property string|null $alias
  * @property float $lat
  * @property float $lng
- * @property string $adress
+ * @property string $address
  * @property string $description
  * @property string $schedule
  * @property string|null $phone
@@ -53,7 +53,7 @@ class Shop extends Entity
         'alias' => true,
         'lat' => true,
         'lng' => true,
-        'adress' => true,
+        'address' => true,
         'description' => true,
         'schedule' => true,
         'phone' => true,

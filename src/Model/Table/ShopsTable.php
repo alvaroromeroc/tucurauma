@@ -56,7 +56,7 @@ class ShopsTable extends Table
                 'nameCallback' => function ($table, $entity, $data, $field, $settings) {
                     return strtolower("header.jpg");
                 },
-                'path' => 'webroot{DS}images{DS}'.date('YmdHis').'{DS}',
+                'path' => 'webroot{DS}images{DS}tiendas{DS}{primaryKey}{DS}',
                 'transformer' =>  function ($table, $entity, $data, $field, $settings) {
                     $extension = pathinfo("header.jpg", PATHINFO_EXTENSION);
 
@@ -64,7 +64,7 @@ class ShopsTable extends Table
                     $tmp = tempnam(sys_get_temp_dir(), 'upload') . '.' . $extension;
 
                     // Use the Imagine library to DO THE THING
-                    $size = new \Imagine\Image\Box(40, 40);
+                    $size = new \Imagine\Image\Box(400, 200);
                     $mode = \Imagine\Image\ImageInterface::THUMBNAIL_INSET;
                     $imagine = new \Imagine\Gd\Imagine();
 
@@ -98,7 +98,7 @@ class ShopsTable extends Table
                 'nameCallback' => function ($table, $entity, $data, $field, $settings) {
                     return strtolower("logo.jpg");
                 },
-                'path' => 'webroot{DS}images{DS}'.date('YmdHis').'{DS}',
+                'path' => 'webroot{DS}images{DS}tiendas{DS}{primaryKey}{DS}',
                 'transformer' =>  function ($table, $entity, $data, $field, $settings) {
                     $extension = pathinfo("logo.jpg", PATHINFO_EXTENSION);
 
@@ -106,7 +106,7 @@ class ShopsTable extends Table
                     $tmp = tempnam(sys_get_temp_dir(), 'upload') . '.' . $extension;
 
                     // Use the Imagine library to DO THE THING
-                    $size = new \Imagine\Image\Box(40, 40);
+                    $size = new \Imagine\Image\Box(90, 90);
                     $mode = \Imagine\Image\ImageInterface::THUMBNAIL_INSET;
                     $imagine = new \Imagine\Gd\Imagine();
 
@@ -168,10 +168,10 @@ class ShopsTable extends Table
             ->notEmpty('lng');
 
         $validator
-            ->scalar('adress')
-            ->maxLength('adress', 250)
-            ->requirePresence('adress', 'create')
-            ->notEmpty('adress');
+            ->scalar('address')
+            ->maxLength('address', 250)
+            ->requirePresence('address', 'create')
+            ->notEmpty('address');
 
         $validator
             ->scalar('description')

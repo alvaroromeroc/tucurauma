@@ -23,16 +23,16 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('categories_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('hits') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('active') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('featured') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('categories_id', ['label'=>'Categoría']) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('name', ['label'=>'Nombre']) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('featured', ['label'=>'Destacado']) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('active', ['label'=>'Activo']) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('created', ['label'=>'Creado']) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('modified', ['label'=>'Modificado']) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('header') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('logo') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('hits') ?></th>
+                <th scope="col" class="actions"><?= __('Acciones') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -41,13 +41,13 @@
                 <td><?= $this->Number->format($shop->id) ?></td>
                 <td><?= $shop->has('category') ? $this->Html->link($shop->category->category, ['controller' => 'Categories', 'action' => 'view', $shop->category->id]) : '' ?></td>
                 <td><?= h($shop->name) ?></td>
-                <td><?= $this->Number->format($shop->hits) ?></td>
+                <td><?= $this->Number->format($shop->featured) ?></td>
                 <td><?= $this->Number->format($shop->active) ?></td>
                 <td><?= h($shop->created) ?></td>
                 <td><?= h($shop->modified) ?></td>
-                <td><?= $this->Number->format($shop->featured) ?></td>
                 <td><?= h($shop->header) ?></td>
                 <td><?= h($shop->logo) ?></td>
+                <td><?= $this->Number->format($shop->hits) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $shop->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $shop->id]) ?>
@@ -65,6 +65,6 @@
             <?= $this->Paginator->next(__('next') . ' >') ?>
             <?= $this->Paginator->last(__('last') . ' >>') ?>
         </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
+        <p><?= $this->Paginator->counter(['format' => __('Página {{page}} de {{pages}},  {{current}} record(s) out of {{count}} total')]) ?></p>
     </div>
 </div>

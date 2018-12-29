@@ -23,11 +23,11 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('category') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('description') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('icon') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('featured') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('category', ['label'=>'Categoría']) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('description', ['label'=>'Descripción']) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('icon', ['label'=>'Icono']) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('featured', ['label'=>'Destacada']) ?></th>
+                <th scope="col" class="actions"><?= __('Acciones') ?></th>
             </tr>
         </thead>
         <tbody>
