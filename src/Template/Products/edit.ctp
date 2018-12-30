@@ -26,8 +26,10 @@
             echo $this->Form->control('product', ['label'=>'Nombre de Producto']);
             echo $this->Form->control('description', ['label'=>'Descripción']);
             echo $this->Form->control('price', ['label'=>'Precio']);
-            echo $this->Form->control('active', ['label'=>'Activo']);
-            echo $this->Form->control('image',['type' => 'file', 'label'=>'Imagen']);
+            echo $this->Form->select('active', [
+                '0' => 'Desactivado',
+                '1' => 'Activo',
+            ]);            echo $this->Form->control('image',['type' => 'file', 'label'=>'Imagen']);
             /*echo $this->Form->control('image_dir');
             echo $this->Form->control('image_size');
             echo $this->Form->control('image_type');*/

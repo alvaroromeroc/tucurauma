@@ -52,7 +52,7 @@ class ProductsTable extends Table
                 'nameCallback' => function ($table, $entity, $data, $field, $settings) {
                     return strtolower("producto.jpg");
                 },
-                'path' => 'webroot{DS}images{DS}'.date('YmdHis').'{DS}',
+                'path' => 'webroot{DS}images{DS}productos{DS}{primaryKey}{DS}',
                 'transformer' =>  function ($table, $entity, $data, $field, $settings) {
                     $extension = pathinfo("producto.jpg", PATHINFO_EXTENSION);
 
@@ -60,7 +60,7 @@ class ProductsTable extends Table
                     $tmp = tempnam(sys_get_temp_dir(), 'upload') . '.' . $extension;
 
                     // Use the Imagine library to DO THE THING
-                    $size = new \Imagine\Image\Box(40, 40);
+                    $size = new \Imagine\Image\Box(90, 90);
                     $mode = \Imagine\Image\ImageInterface::THUMBNAIL_INSET;
                     $imagine = new \Imagine\Gd\Imagine();
 
