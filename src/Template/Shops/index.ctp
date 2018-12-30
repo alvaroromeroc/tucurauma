@@ -29,8 +29,6 @@
                 <th scope="col"><?= $this->Paginator->sort('active', ['label'=>'Activo']) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created', ['label'=>'Creado']) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified', ['label'=>'Modificado']) ?></th>
-                <th scope="col"><?= $this->Paginator->sort('header') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('logo') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('hits') ?></th>
                 <th scope="col" class="actions"><?= __('Acciones') ?></th>
             </tr>
@@ -45,8 +43,6 @@
                 <td><?= $this->Number->format($shop->active) ?></td>
                 <td><?= h($shop->created) ?></td>
                 <td><?= h($shop->modified) ?></td>
-                <td><?= h($shop->header) ?></td>
-                <td><?= h($shop->logo) ?></td>
                 <td><?= $this->Number->format($shop->hits) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $shop->id]) ?>
