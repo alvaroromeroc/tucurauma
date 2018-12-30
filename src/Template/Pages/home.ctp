@@ -46,12 +46,33 @@ $this->layout = false;
 
 <div class="row">
     <div class="columns large-12 text-center">
-        <h3 class="more"><a href="shops">Ir a editor</a></h3>
-        <p>
-            .
-        </p>
+        <h3 class="more">Editor</h3>
     </div>
     <hr/>
+</div>
+
+<div class="row">
+    <div class="columns large-4">
+        <h3>Tiendas</h3>
+        <ul>
+            <li class=""><a target="_blank" href="shops">Ver tiendas</a></li>
+            <li class=""><a target="_blank" href="shops/add">Agregar</a></li>
+        </ul>
+    </div>
+    <div class="columns large-4">
+        <h3>Productos</h3>
+        <ul>
+            <li class=""><a target="_blank" href="products">Ver Productos</a></li>
+            <li class=""><a target="_blank" href="products/add">Agregar</a></li>
+        </ul>
+    </div>
+    <div class="columns large-4">
+        <h3>Categorías</h3>
+        <ul>
+            <li class=""><a target="_blank" href="categories">Ver Categorías</a></li>
+            <li class=""><a target="_blank" href="categories/add">Agregar</a></li>
+        </ul>
+    </div>
 </div>
 
 
