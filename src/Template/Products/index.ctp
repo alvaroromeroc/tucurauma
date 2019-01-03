@@ -45,9 +45,10 @@
                 <td class="actions">
                     <?= $this->Html->image('view.png', ['alt' => 'view', 'url' => ['action' => 'view', $product->id]]); ?>
                     <?= $this->Html->image('edit.png', ['alt' => 'edit', 'url' => ['action' => 'edit', $product->id]]); ?>
-                    <?php echo $this->Form->postLink($this->Html->image("delete.png",["alt" => __('Delete')]), ['action' => 'delete', $product->id],['confirm' => __('Are you sure you want to delete # {0}?', $product->id)])?>
-                    <?= $this->Form->postLink(__('Delete'), 
-                        ['action' => 'delete', $product->id], ['confirm' => __('Are you sure you want to delete # {0}?', $product->id)]) ?>
+                    <?= $this->Form->postLink($this->Html->image("delete.png",["alt" => __('Delete')]),
+                        ['action' => 'delete', $product->id],
+                        ['escape' => false, 'confirm' => __('Está seguro de borrar el producto # {0}?', $product->id)])
+                    ?>
                 </td>
             </tr>
             <?php endforeach; ?>

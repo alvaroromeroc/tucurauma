@@ -45,9 +45,12 @@
                 <td><?= h($shop->modified) ?></td>
                 <td><?= $this->Number->format($shop->hits) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $shop->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $shop->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $shop->id], ['confirm' => __('Are you sure you want to delete # {0}?', $shop->id)]) ?>
+                    <?= $this->Html->image('view.png', ['alt' => 'view', 'url' => ['action' => 'view', $shop->id]]); ?>
+                    <?= $this->Html->image('edit.png', ['alt' => 'edit', 'url' => ['action' => 'edit', $shop->id]]); ?>
+                    <?= $this->Form->postLink($this->Html->image("delete.png",["alt" => __('Delete')]),
+                        ['action' => 'delete', $shop->id],
+                        ['escape' => false, 'confirm' => __('Está seguro de borrar la tienda # {0}?', $shop->id)])
+                    ?>
                 </td>
             </tr>
             <?php endforeach; ?>

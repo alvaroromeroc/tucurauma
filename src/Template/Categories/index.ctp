@@ -39,9 +39,12 @@
                 <td><?= h($category->icon) ?></td>
                 <td><?= $this->Number->format($category->featured) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $category->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $category->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $category->id], ['confirm' => __('Are you sure you want to delete # {0}?', $category->id)]) ?>
+                    <?= $this->Html->image('view.png', ['alt' => 'view', 'url' => ['action' => 'view', $category->id]]); ?>
+                    <?= $this->Html->image('edit.png', ['alt' => 'edit', 'url' => ['action' => 'edit', $category->id]]); ?>
+                    <?= $this->Form->postLink($this->Html->image("delete.png",["alt" => __('Delete')]),
+                        ['action' => 'delete', $category->id],
+                        ['escape' => false, 'confirm' => __('Está seguro de borrar la categoría # {0}?', $category->id)])
+                    ?>
                 </td>
             </tr>
             <?php endforeach; ?>
