@@ -55,11 +55,11 @@ class ShopsController extends AppController
         if ($this->request->is('post')) {
             $shop = $this->Shops->patchEntity($shop, $this->request->getData());
             if ($this->Shops->save($shop)) {
-                $this->Flash->success(__('The shop has been saved.'));
+                $this->Flash->success(__('La tienda fue grabada.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The shop could not be saved. Please, try again.'));
+            $this->Flash->error(__('La tienda no puede ser grabada. Reintente por favor.'));
         }
         $categories = $this->Shops->Categories->find('list', ['limit' => 200]);
         $this->set(compact('shop', 'categories'));
@@ -80,11 +80,11 @@ class ShopsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $shop = $this->Shops->patchEntity($shop, $this->request->getData());
             if ($this->Shops->save($shop)) {
-                $this->Flash->success(__('The shop has been saved.'));
+                $this->Flash->success(__('La tienda fue grabada.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The shop could not be saved. Please, try again.'));
+            $this->Flash->error(__('La tienda no puede ser grabada. Reintente por favor.'));
         }
         $categories = $this->Shops->Categories->find('list', ['limit' => 200]);
         $this->set(compact('shop', 'categories'));
@@ -102,9 +102,9 @@ class ShopsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $shop = $this->Shops->get($id);
         if ($this->Shops->delete($shop)) {
-            $this->Flash->success(__('The shop has been deleted.'));
+            $this->Flash->success(__('La tienda fue borrada.'));
         } else {
-            $this->Flash->error(__('The shop could not be deleted. Please, try again.'));
+            $this->Flash->error(__('La tienda no puede ser borrada. Reintente por favor.'));
         }
 
         return $this->redirect(['action' => 'index']);

@@ -5,6 +5,7 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\Utility\Text;
 
 /**
  * Shops Model
@@ -132,6 +133,13 @@ class ShopsTable extends Table
                 'keepFilesOnDelete' => false
             ]
         ]);
+    }
+
+    public function beforeSave($event, $entity, $options)
+    {
+        $sluggedName = Text::slug(strtolower($entity->name));
+        // trim slug to maximum length defined in schema
+        $entity->alias = substr($sluggedName, 0, 240);
     }
 
     /**
