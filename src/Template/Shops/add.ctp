@@ -4,19 +4,6 @@
  * @var \App\Model\Entity\Shop $shop
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Tiendas') ?></li>
-        <li><?= $this->Html->link(__('Listado Tiendas'), ['controller' => 'Shops', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('Crear Tiendas'), ['controller' => 'Shops', 'action' => 'add']) ?> </li>    
-        <li class="heading"><?= __('Productos') ?></li>
-        <li><?= $this->Html->link(__('Listado Productos'), ['controller' => 'Products', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('Crear Producto'), ['controller' => 'Products', 'action' => 'add']) ?> </li>
-        <li class="heading"><?= __('Categorías') ?></li>
-        <li><?= $this->Html->link(__('Listado Categorías'), ['controller' => 'Categories', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('Crear Categoría'), ['controller' => 'Categories', 'action' => 'add']) ?> </li>
-    </ul>
-</nav>
 <div class="shops form large-9 medium-8 columns content">
     <?= $this->Form->create($shop, ['type' => 'file']) ?>
     <fieldset>
@@ -44,6 +31,7 @@
             ]);
             //echo $this->Form->control('header', ['type' => 'file', 'label'=>'Imagen Header']);
             //echo $this->Form->control('logo', ['type' => 'file', 'label'=>'Imagen Logo']);
+            echo $this->Form->control('tags._ids', ['options' => $tags]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Aceptar')) ?>

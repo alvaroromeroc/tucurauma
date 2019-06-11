@@ -63,6 +63,9 @@ class ShopsController extends AppController
         }
         $categories = $this->Shops->Categories->find('list', ['limit' => 200]);
         $this->set(compact('shop', 'categories'));
+        
+        $tags = $this->Shops->Tags->find('list');
+        $this->set('tags', $tags);
     }
 
     /**
@@ -88,6 +91,9 @@ class ShopsController extends AppController
         }
         $categories = $this->Shops->Categories->find('list', ['limit' => 200]);
         $this->set(compact('shop', 'categories'));
+
+        $tags = $this->Shops->Tags->find('list');
+        $this->set('tags', $tags);
     }
 
     /**

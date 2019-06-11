@@ -27,6 +27,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('style.css') ?>
+    <?= $this->Html->script('script.js') ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
@@ -41,12 +42,28 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         </ul>
         <div class="top-bar-section">
             <ul class="right">
-                <li><a target="_blank" href="https://www.tucurauma.cl/">Tu Curauma</a></li>
+                <li><a target="_blank" href="https://www2.tucurauma.cl/">Tu Curauma</a></li>
             </ul>
         </div>
     </nav>
     <?= $this->Flash->render() ?>
     <div class="container clearfix">
+    <nav class="large-3 medium-4 columns" id="actions-sidebar">
+        <ul class="side-nav">
+            <li class="heading"><?= __('Tiendas') ?></li>
+            <li><?= $this->Html->link(__('Listado Tiendas'), ['controller' => 'Shops', 'action' => 'index']) ?> </li>
+            <li><?= $this->Html->link(__('Crear Tiendas'), ['controller' => 'Shops', 'action' => 'add']) ?> </li>    
+            <li class="heading"><?= __('Productos') ?></li>
+            <li><?= $this->Html->link(__('Listado Productos'), ['controller' => 'Products', 'action' => 'index']) ?> </li>
+            <li><?= $this->Html->link(__('Crear Producto'), ['controller' => 'Products', 'action' => 'add']) ?> </li>
+            <li class="heading"><?= __('Categorías') ?></li>
+            <li><?= $this->Html->link(__('Listado Categorías'), ['controller' => 'Categories', 'action' => 'index']) ?> </li>
+            <li><?= $this->Html->link(__('Crear Categoría'), ['controller' => 'Categories', 'action' => 'add']) ?> </li>
+            <li class="heading"><?= __('Etiquetas') ?></li>
+            <li><?= $this->Html->link(__('Listado Etiquetas'), ['controller' => 'Tags','action' => 'index']) ?></li>
+            <li><?= $this->Html->link(__('Crear Etiqueta'), ['controller' => 'Tags','action' => 'add']) ?> </li>
+        </ul>
+    </nav>
         <?= $this->fetch('content') ?>
     </div>
     <footer>

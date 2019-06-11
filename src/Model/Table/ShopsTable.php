@@ -42,6 +42,8 @@ class ShopsTable extends Table
 
         $this->addBehavior('Timestamp');
 
+        $this->belongsToMany('Tags');
+
         $this->belongsTo('Categories', [
             'foreignKey' => 'categories_id',
             'joinType' => 'INNER'

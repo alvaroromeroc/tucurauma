@@ -26,9 +26,7 @@ $this->layout = false;
 <head>
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <?= $cakeDescription ?>
-    </title>
+    <title>Tu Curauma Editor</title>
 
     <?= $this->Html->meta('icon') ?>
     <?= $this->Html->css('base.css') ?>
@@ -52,25 +50,32 @@ $this->layout = false;
 </div>
 
 <div class="row">
-    <div class="columns large-4">
+    <div class="columns large-3">
         <h3>Tiendas</h3>
         <ul>
             <li class=""><a target="_blank" href="shops">Ver tiendas</a></li>
             <li class=""><a target="_blank" href="shops/add">Agregar</a></li>
         </ul>
     </div>
-    <div class="columns large-4">
+    <div class="columns large-3">
         <h3>Productos</h3>
         <ul>
             <li class=""><a target="_blank" href="products">Ver Productos</a></li>
             <li class=""><a target="_blank" href="products/add">Agregar</a></li>
         </ul>
     </div>
-    <div class="columns large-4">
+    <div class="columns large-3">
         <h3>Categorías</h3>
         <ul>
             <li class=""><a target="_blank" href="categories">Ver Categorías</a></li>
             <li class=""><a target="_blank" href="categories/add">Agregar</a></li>
+        </ul>
+    </div>
+    <div class="columns large-3">
+        <h3>Tags</h3>
+        <ul>
+            <li class=""><a target="_blank" href="tags">Ver Tags</a></li>
+            <li class=""><a target="_blank" href="tags/add">Agregar</a></li>
         </ul>
     </div>
 </div>
